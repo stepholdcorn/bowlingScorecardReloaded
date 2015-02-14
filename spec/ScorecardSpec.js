@@ -12,6 +12,10 @@ describe('Scorecard', function() {
       expect(scorecard.frameScores.length).toEqual(0);
     });
 
+    it('has a zero running score', function() {
+      expect(scorecard.runningScore).toEqual(0);
+    });
+
   });
 
   describe('updating the scores', function() {
