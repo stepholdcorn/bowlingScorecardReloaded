@@ -3,7 +3,11 @@ var Frame = function() {
   this.secondThrowScore = undefined;
 };
 
-  Frame.prototype.name = function() {
+Frame.prototype.inputFirstThrowScore = function(fallenPins) {
+  this.firstThrowScore = fallenPins;
+};
 
-  };
+Frame.prototype.inputSecondThrowScore = function(fallenPins) {
+  this.secondThrowScore = fallenPins;
+};
 

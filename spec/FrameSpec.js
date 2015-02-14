@@ -18,4 +18,18 @@ describe('Frame', function() {
 
   });
 
+  describe('updating the score', function() {
+
+    it('stores the first throw score', function() {
+      frame.inputFirstThrowScore(4);
+      expect(frame.firstThrowScore).toEqual(4);
+    });
+
+    it('stores the second throw score', function() {
+      frame.inputSecondThrowScore(2);
+      expect(frame.secondThrowScore).toEqual(2);
+    });
+
+  });
+
 });
