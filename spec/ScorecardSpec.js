@@ -1,11 +1,9 @@
 describe('Scorecard', function() {
 
   var scorecard;
-  var frame;
 
   beforeEach(function() {
     scorecard = new Scorecard();
-    frame = jasmine.createSpyObj('frame', ['totalScore']);
   });
 
   describe('by default', function() {
@@ -16,12 +14,18 @@ describe('Scorecard', function() {
 
   });
 
-  describe('updating the frame scores', function() {
+  describe('updating the scores', function() {
 
-    it('stores the individual scores', function() {
-      SpyOn(frame, 'totalScore')and.ReturnValue(6);
-      scorecard.requestScore();
+    it('stores the individual frame scores', function() {
+      scorecard.requestScore(6);
       expect(scorecard.frameScores[0]).toEqual(6);
+    });
+
+    it('calculates a total running score', function() {
+      scorecard.requestScore(6);
+      scorecard.requestScore(8);
+      scorecard.calculateRunningScore();
+      expect(scorecard.runningScore).toEqual(14);
     });
 
   });
