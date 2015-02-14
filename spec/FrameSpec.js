@@ -18,7 +18,7 @@ describe('Frame', function() {
 
   });
 
-  describe('updating the score', function() {
+  describe('updating the throw scores', function() {
 
     it('stores the first throw score', function() {
       frame.inputFirstThrowScore(4);
@@ -28,6 +28,17 @@ describe('Frame', function() {
     it('stores the second throw score', function() {
       frame.inputSecondThrowScore(2);
       expect(frame.secondThrowScore).toEqual(2);
+    });
+
+  });
+
+  describe('updating the total score', function() {
+
+    it('calculates the sum of the two throws', function() {
+      frame.inputFirstThrowScore(4);
+      frame.inputSecondThrowScore(2);
+      frame.calculateTotalScore();
+      expect(frame.totalScore).toEqual(6);
     });
 
   });
