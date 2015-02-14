@@ -1,7 +1,9 @@
-var Frame = function() {};
+var Frame = function() {
+  this.firstThrowScore = undefined;
+  this.secondThrowScore = undefined;
+};
 
-Frame.prototype.name = function() {
+  Frame.prototype.name = function() {
 
   };
 
-};
